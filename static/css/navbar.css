@@ -1,0 +1,38 @@
+/* Custom Styles */
+
+  
+  .navbar-brand {
+    font-weight: bold;
+  }
+  
+  /* Hero Section Styles */
+  #hero {
+    background-size: cover;
+    color: #fff;
+    padding: 100px 0;
+  }
+  
+  /* Sections Padding */
+  section {
+    padding: 80px 0;
+  }
+  
+  /* Footer Styles */
+  footer {
+    color: #fff;
+  }
+  
+  /* Animations */
+  .fadeIn {
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  

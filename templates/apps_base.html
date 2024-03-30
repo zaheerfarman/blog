@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block base_stylesheets %}
+    <style>
+        #sidemenu a {
+            font-family: Dosis, sans-serif;
+        }
+    </style>
+    {% block apps_base_stylesheets %}{% endblock %}
+{% endblock %}
+
+{% block base_content %}
+    <div class="container h-100">
+        <div class="row h-100">
+            <aside class="col-md-2">
+                <div class="mt-2 mb-3" id="sidemenu">
+                    <ul class="nav flex-md-column flex-row justify-content-between">
+                        <li class="nav-item">
+                            <a href="/accounts/dashboard" class="nav-link pl-0 text-info">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link pl-0 text-info">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link pl-0 text-info">Courses</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href=""
+                               class="nav-link pl-0 text-info">Institutes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link pl-0 text-info">Billing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link pl-0 text-info">Schedule</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link pl-0 text-info">Teachers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link pl-0 text-info">Salary</a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <main class="col-md-10 py-3">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="mb-3 pb-2 apps-base-title">
+                            {% block apps_base_title %}{% endblock %}
+                        </h2>
+                        {% block apps_base_content %}{% endblock %}
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+{% endblock %}
+
+{% block base_scripts %}
+    {# Export HTML table to excel #}
+    {% load static %}
+    <script src="{% static 'js/xlsx.core.min.js' %}"></script>
+    <script src="{% static 'js/FileSaver.min.js' %}"></script>
+    <script src="{% static 'js/tableexport.min.js' %}"></script>
+    <script>
+        function exportTableToExcel(id) {
+            var ExportButtons = document.getElementById(id);
+            var instance = new TableExport(ExportButtons, {
+                formats: ['xlsx'],
+                exportButtons: false
+            });
+            var exportData = instance.getExportData()[id]['xlsx'];
+            instance.export2file(exportData.data, exportData.mimeType, exportData.filename, exportData.fileExtension);
+        }
+    </script>
+    {% block apps_base_scripts %}{% endblock %}
+{% endblock %}

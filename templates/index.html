@@ -1,0 +1,190 @@
+{% extends 'base.html' %}
+{% block title %} Beyond The Filter{% endblock %}
+{% block base_stylesheets %}
+<style>
+    /* Custom Styles */
+    .carousel-item {
+      height: 400px; /* Adjust carousel height */
+      background-size: cover;
+      background-position: center;
+    }
+
+    .carousel-caption {
+      background-color: #F88379; /* Semi-transparent background for caption */
+      color: var(--text-color);
+    }
+
+    .carousel-caption h3 {
+      color: var(--text-color);
+    }
+
+    /* Animations */
+    .fadeIn {
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    /* Custom Styles */
+
+  
+  .navbar-brand {
+    font-weight: bold;
+  }
+  
+  /* Hero Section Styles */
+  #hero {
+    background-size: cover;
+    color: var(--text-color);
+    padding: 100px 0;
+  }
+  
+  /* Sections Padding */
+  section {
+    padding: 80px 0;
+  }
+  
+  /* Footer Styles */
+  footer {
+    color: #fff;
+  }
+  
+  /* Animations */
+  .fadeIn {
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  </style>
+{% endblock %}
+{% block base_content %}
+{% load static %}
+<body>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active" style="background-image: url('{% static 'img/bd1.jpg' %}');">
+            <div class="carousel-caption d-none d-md-block">
+              <h3 class="fadeIn">Impact of Social Media on Body Dysmorphia</h3>
+              <p class="fadeIn">Explore how social media affects body image and mental health</p>
+            </div>
+          </div>
+          <div class="carousel-item" style="background-image: url('{% static 'img/bd2.jpg' %}');">
+            <div class="carousel-caption d-none d-md-block">
+              <h3 class="fadeIn">Understanding the Causes</h3>
+              <p class="fadeIn">Learn about the factors contributing to body dysmorphia through social media</p>
+            </div>
+          </div>
+          <div class="carousel-item" style="background-image: url('{% static 'img/bd3.png' %}');">
+            <div class="carousel-caption d-none d-md-block">
+              <h3 class="fadeIn">Seeking Solutions</h3>
+              <p class="fadeIn">Discover strategies for fostering a healthy relationship with social media and self-image</p>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      
+<!-- Hero Section -->
+<section id="hero" class="text-center">
+  <div class="container">
+    <h1 class="display-4">Welcome to Beyond the Filter!    </h1>
+    <p class="pt-4 lead">In a world inundated with flawless Instagram feeds and perfectly edited selfies, it’s easy to lose sight of what truly matters. We live in an age where social media platforms often perpetuate unrealistic beauty standards, leaving many of us feeling inadequate and dissatisfied with our own bodies. But here’s the thing: behind every flawless filter lies a real person with imperfections, struggles, and unique beauty. That’s where Beyond the Filter comes in.  We understand that excessive use of social media platforms can exacerbate feelings of inadequacy and fuel negative self-perceptions.<br>
+      <br>We’re on a mission to challenge the superficiality of social media and encourage you to embrace your true self.  That’s why we’re here to raise awareness about the harmful impact of digital distortion and empower you to break free from its grasp.
+      </p>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="text-center">
+  <div class="container">
+    <h2>Vision</h2>
+    <p class="pt-4 font-italic">Our vision  is to create a world where individuals feel empowered to embrace their true selves, free from the pressures of unrealistic beauty standards perpetuated by social media. We envision a society where authenticity, self-acceptance, and inner beauty are celebrated and valued above all else.</p>
+    <p class="font-italic">You are welcome here. Let’s learn to embrace authenticity and  your true self. </p>
+  </div>
+</section>
+
+<!-- Causes Section -->
+<section id="causes">
+  <div class="container text-center">
+    <h2>Causes</h2>
+    <div class="row pt-4">
+      <p class="col-md-6 pt-5" style="line-height: 2.5; word-spacing: 0.3em;">
+        Social media exacerbates body dysmorphia by promoting unrealistic beauty standards through edited images and curated content. Comparative behavior leads individuals to constantly compare themselves to others, fostering feelings of inadequacy. Seeking validation through likes and comments can deepen these insecurities. Moreover, cyberbullying and negative body talk further contribute to distorted self-perceptions, perpetuating a cycle of dissatisfaction and mental health issues.</p>      <img class="col-md-6 pt-5" style="height: 400px;" src="{% static 'img/cas1.jpg' %}" alt="{% static 'img/cas1.jpg' %}">
+  </div>
+</div>
+</section>
+
+<!-- Effects Section -->
+<section id="effects">
+  <div class="container text-center">
+    <h2>Effects</h2>
+    <div class="row pt-4">
+      <img class="col-md-6 pt-5" style="height: 350px;" src="{% static 'img/cas3.webp' %}" alt="{% static 'img/cas2.webp' %}">
+      <p class="col-md-6 pt-5" style="line-height: 2.5; word-spacing: 0.3em;">
+      Social media fosters unrealistic beauty standards, promoting edited images that fuel body dissatisfaction. Comparative behavior leads to feelings of inadequacy, while cyberbullying perpetuates negative body talk and lowers self-esteem. Constant exposure to idealized images contributes to poor body image and mental health issues like depression and anxiety. Moreover, seeking validation through likes and comments can exacerbate these effects, creating a cycle of dissatisfaction and self-criticism.</p>
+  </div>  
+</div>
+</section>
+
+<!-- Solutions Section -->
+<section id="solutions">
+  <div class="container text-center">
+    <h2>Solutions</h2>
+    <div class="row pt-4">
+      <p class="col-md-6 pt-5" style="line-height: 2.5; word-spacing: 0.3em;">
+        Individuals can mitigate social media's negative impact on body image by limiting screen time, curating feeds to include body-positive content, practicing self-compassion, recognizing edited realities online, engaging in offline activities, seeking support when needed, educating themselves about media literacy, and practicing mindfulness. By implementing these strategies, individuals can foster a healthier relationship with social media and improve their body image and overall mental well-being.</p>
+      <img class="col-md-6 pt-5" style="height: 400px;" src="{% static 'img/gym.avif' %}" alt="{% static 'img/cas1.jpg' %}">
+  </div>
+  </div>
+</section>
+<footer class="text-light text-center py-3" style="background-color: #F88379;">
+  <p>&copy; 2024 Beyond The Filter</p>
+</footer>
+<!-- Resources Section 
+<section id="resources">
+  <div class="container">
+    <h2>Resources</h2>
+    <p>Links to articles, studies, and resources for further reading.</p>
+  </div>
+</section>
+-->
+
+<!-- Bootstrap and JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+{% endblock %}
+{% block base_scripts %}
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+{% endblock %}

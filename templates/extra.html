@@ -1,0 +1,296 @@
+{% extends 'base.html' %}
+
+{% block title %}HND{% endblock %}
+
+{% block home_url %}{% url 'index' %}{% endblock %}
+
+{% block base_stylesheets %}
+    <style>
+        #global-alerts {
+            display: none;
+        }
+
+        /* Carousel base class */
+        .carousel {
+            margin-bottom: 4rem;
+            text-shadow: 1px 1px 1px grey;
+        }
+
+        /* Since positioning the image, we need to help out the caption */
+        .carousel-caption {
+            bottom: 3rem;
+            z-index: 10;
+        }
+
+        /* Declare heights because of positioning of img element */
+        .carousel-item {
+            height: 40rem;
+            background-color: #000000;
+        }
+
+        .carousel-item > img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            height: 40rem;
+            opacity: 0.4;
+        }
+
+        /* MARKETING CONTENT
+        -------------------------------------------------- */
+
+        /* Center align the text within the three columns below the carousel */
+        .marketing .col-lg-4 {
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .marketing h2 {
+            font-weight: 400;
+        }
+
+        .marketing .col-lg-4 p {
+            margin-right: .75rem;
+            margin-left: .75rem;
+        }
+
+        /* Featurettes
+        ------------------------- */
+
+        .featurette-divider {
+            margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+        }
+
+        /* Thin out the marketing headings */
+        .featurette-heading {
+            font-weight: 300;
+            line-height: 1;
+            letter-spacing: -.05rem;
+        }
+
+        /* RESPONSIVE CSS
+        -------------------------------------------------- */
+
+        @media (min-width: 40em) {
+            /* Bump up size of carousel content */
+            .carousel-caption p {
+
+                margin-bottom: .5rem;
+                font-size: 1.25rem;
+                line-height: 1.4;
+            }
+
+            .featurette-heading {
+                font-size: 50px;
+            }
+        }
+
+        @media (min-width: 62em) {
+            .featurette-heading {
+                margin-top: 7rem;
+            }
+        }
+    </style>
+
+{% endblock %}
+
+{% block base_content %}
+    <main role="main">
+
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+                <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+            </ol>
+            {% load static %}
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="first-slide"
+                         src="{% static 'img/pic1.jpg' %}"
+                         alt="First slide">
+                    <div class="container ">
+                        <div class="carousel-caption text-left">
+                            <h1>Unlock Your Potential</h1>
+                            <p>Continuous learning and development, Acquiring new skills, Seeking knowledge, and Gaining valuable experiences.</p>
+                            <p>
+                                <a class="btn btn-lg btn-primary" href="/accounts/signup" role="button">Get Register</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="second-slide"
+                         src="{% static 'img/pic2.jpg' %}"
+                         alt="Second slide">
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1>Learn Anytime, Anywhere</h1>
+                            <p>Encompasses various learning formats, such as video lectures, e-books, webinars, interactive quizzes, discussion forums, and more</p>
+                            <p><a class="btn btn-lg btn-primary" href="/accounts/signup" role="button">Get Register</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="third-slide"
+                         src="{% static 'img/pic.jpg' %}"
+                         alt="Third slide">
+                    <div class="container">
+                        <div class="carousel-caption text-right">
+                            <h1>Transform Your Career</h1>
+                            <p>By transforming their careers, individuals may open themselves up to a wider range of opportunities. This could include access to higher-paying jobs, leadership roles, entrepreneurial ventures, or even international career prospects.</p>
+                            <p><a class="btn btn-lg btn-primary" href="/accounts/signup" role="button">Get Register</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+
+        <!-- Marketing messaging and featurettes
+        ================================================== -->
+        <!-- Wrap the rest of the page in another container to center all the content. -->
+
+        <div class="container marketing">
+
+            <!-- Three columns of text below the carousel -->
+            <div class="row">
+                <div class="col-lg-4">
+                    <img class="rounded-circle"
+                         src="{% static 'img/pic3.png' %}" alt="companies" width="140" height="140">
+                    <h2>Enroll your Institute</h2>
+                    <p>At CodeGalaxy, we believe in nurturing talent and fostering success. Enroll now and let's build a better tomorrow.</p>
+                    <p><a class="btn btn-secondary"
+                          href="#" role="button">View
+                        details »</a></p>
+                </div><!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <img class="rounded-circle"
+                         src="{% static 'img/teach.jpg' %}" alt="affairs" width="140" height="140">
+                    <h2>Enroll as Teacher</h2>
+                    <p>Join us in shaping the leaders of tomorrow! Enroll now and be part of a community dedicated to excellence</p>
+                    <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+                </div><!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <img class="rounded-circle"
+                         src="{% static 'img/student.png' %}" alt="salary" width="140" height="140">
+                    <h2>Enroll as Student</h2>
+                    <p>Discover your passion and purpose at our institute. Enroll now and let's shape a better future, one student at a time!</p>
+                    <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+                </div><!-- /.col-lg-4 -->
+            </div><!-- /.row -->
+
+            <!-- Service Start 
+        <div class="service">
+            <div class="container">
+                <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                    <p>What we do</p>
+                    <h2>E learning Portal</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.0s">
+                        <div class="service-item">
+                            <div class="service-icon">
+                            </div>
+                            <h3>Coding</h3>
+                            <p>
+                                Use HTML PYTHON, DJango, CSS , JS Using responsive web design for a better visitor experience Take advantage of social media
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="service-item active">
+                            <div class="service-icon">
+                            </div>
+                            <h3>Accounts</h3>
+                            <p>
+                                Create quality content that Learning Management System (LMS) leads are seeking Use appropriate key phrases so your audience can find your content on Google
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="service-item">
+                            <div class="service-icon">
+                            </div>
+                            <h3>Marketing</h3>
+                            <p>
+                                Students are used to working online, and appreciate the flexibility. Online courses are less liable to disruption, as we’ve seen with the recent pandemic.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Service End -->
+            <!-- START THE FEATURETTES -->
+            <div class="top-bar d-none d-md-block">
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading">First be more familiar with Coding. <span class="text-muted">It'll blow your mind.</span>
+                    </h2>
+                    <p class="lead">Programming can get complicated if you try to do too much too soon—without help, a purpose, or learning fundamental skills. But then no, it's also not hard to learn to code if you start learning where you're at. It's easier when you start with foundational skills, like-minded people, mentors, and a goal in mind</p>
+                </div>
+                <div class="col-md-5">
+                    <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500"
+                         style="width: 500px; height: 500px;"
+                         src="{% static 'img/fam1.jpg' %}"
+                         data-holder-rendered="true">
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-7 order-md-2">
+                    <h2 class="featurette-heading">Oh yeah, it's that good. <span
+                            class="text-muted">See for why to manage finance.</span></h2>
+                    <p class="lead">Financial management of your small business encompasses more than keeping an
+                        accurate set of books and balancing your business checking account. You must manage your
+                        finances so you don’t overspend and so you remain prepared for all expenditures, as well as
+                        profit distributions. Your financial management responsibilities affect all aspects of your
+                        business. A company that sells well but has poor financial management can fail.
+                    </p>
+                </div>
+                <div class="col-md-5 order-md-1">
+                    <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500"
+                         src="{% static 'img/business-2.jpg' %}"
+                         data-holder-rendered="true" style="width: 500px; height: 500px;">
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Workmate.</span></h2>
+                    <p class="lead">Employer and managerial control within an organization rests at many levels and has
+                        important implications for staff and productivity alike, with control forming the fundamental
+                        link between desired outcomes and actual processes. Employers must balance interests such as
+                        decreasing wage constraints with a maximization of labor productivity in order to achieve a
+                        profitable and productive employment relationship.
+                    </p>
+                </div>
+                <div class="col-md-5">
+                    <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500"
+                         src="{% static 'img/business-3.jpg' %}"
+                         data-holder-rendered="true" style="width: 500px; height: 500px;">
+                </div>
+            </div>
+            <hr class="featurette-divider">
+            <!-- /END THE FEATURETTES -->
+        </div><!-- /.container -->
+    </main>
+{% endblock %}
