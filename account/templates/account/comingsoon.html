@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block title %} Videos {% endblock %}
+
+{% block base_stylesheets %}
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--body-color);
+    color: var(--text-color);
+  }
+  
+  .container {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  h1 {
+    font-size: 3rem;
+    color: var(--text-color);
+  }
+  
+  .countdown {
+    font-size: 1.5rem;
+    color: #777;
+  }
+  
+  /* Example of animation */
+  @keyframes example {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .container {
+    animation: example 1s ease-in-out;
+  }
+  
+</style>
+{% endblock %}
+
+{% block base_content %}
+<body>
+    <div class="container">
+      <h1>Coming Soon</h1>
+      <div class="countdown">
+        <span id="days">00</span> Days
+        <span id="hours">00</span> Hours
+        <span id="minutes">00</span> Minutes
+        <span id="seconds">00</span> Seconds
+      </div>
+    </div>
+  </body>
+
+{% endblock %}
+
+{% block base_scripts %}
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Apr 10, 2024 00:00:00").getTime();
+
+// Update the countdown every 1 second
+var x = setInterval(function() {
+
+  // Get the current date and time
+  var now = new Date().getTime();
+
+  // Calculate the remaining time
+  var distance = countDownDate - now;
+
+  // Calculate days, hours, minutes, and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result
+  document.getElementById("days").innerHTML = days;
+  document.getElementById("hours").innerHTML = hours;
+  document.getElementById("minutes").innerHTML = minutes;
+  document.getElementById("seconds").innerHTML = seconds;
+
+  // If the countdown is over, display a message
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = "EXPIRED";
+  }
+}, 1000);
+
+</script>
+
+{% endblock %}

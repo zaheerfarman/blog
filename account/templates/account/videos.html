@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% block title %} Videos {% endblock %}
+{% load static %}
+{% block base_stylesheets %}
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #777;
+}
+
+.blog-posts {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+article {
+  background-color: #f7f7f7;
+  margin: 20px;
+  padding: 20px;
+  width: 300px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+article:hover {
+  transform: translateY(-5px);
+}
+
+.read-more {
+  display: block;
+  text-align: right;
+  color: #333;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.read-more:hover {
+  color: #777;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.image {
+    width: 250px; /* Adjusting different pixel sizes */
+    height: 250px;
+    background-color: #ddd;
+    margin-bottom: 10px;
+  }
+</style>
+{% endblock %}
+
+{% block base_content %}
+<body>
+  <section class="row blog-posts">
+    {% for video in videos %}
+    <article class="col-md-3 text-center">
+      <a href="{% url 'play' video.id %}">
+        <video class="image" controls>
+          <source src="{{ video.video_file.url }}" type="video/mp4">
+      </video>
+     </a>
+    <h2>{{ video.title }}</h2>
+    </article>
+    {% endfor %}
+    <!-- Additional articles can be added here -->
+  </section>
+</body>
+
+{% endblock %}
+
+{% block base_scripts %}
+
+<script>
+  function toggleReadMore() {
+      var dots = document.getElementById("dots");
+      var moreText = document.getElementById("more");
+      var btnText = document.getElementById("readMoreBtn");
+
+      if (dots.style.display === "none") {
+          dots.style.display = "inline";
+          btnText.innerHTML = "Read more";
+          moreText.style.display = "none";
+      } else {
+          dots.style.display = "none";
+          btnText.innerHTML = "Read less";
+          moreText.style.display = "inline";
+      }
+  }
+</script>
+
+{% endblock %}

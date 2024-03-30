@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% block title %} Blog {% endblock %}
+{% load static %}
+{% block base_stylesheets %}
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #777;
+}
+
+.blog-posts {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+article {
+  background-color: #f7f7f7;
+  margin: 20px;
+  padding: 20px;
+  width: 300px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+article:hover {
+  transform: translateY(-5px);
+}
+
+.read-more {
+  display: block;
+  text-align: right;
+  color: #333;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.read-more:hover {
+  color: #777;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.image {
+    width: 250px; /* Adjusting different pixel sizes */
+    height: 250px;
+    background-color: #ddd;
+    margin-bottom: 10px;
+  }
+</style>
+{% endblock %}
+
+{% block base_content %}
+<body>
+  <section class="row blog-posts">
+    {% for posts in post %}
+    <article class="col-md-3 text-center">
+      <h2>{{ posts.title }}</h2>
+      <img class="image" src="{{ posts.image.url }}" alt="My First Post">
+      <p>{{ post.paragraph|safe|slice:"0:100" }}<span id="dots">...</span><span id="more" style="display:none;">{{ post.paragraph|safe|slice:"100:" }}</span></p>
+      <a href="{% url 'home' posts.id %}" class="read-more">Read Content</a>
+    </article>
+    {% endfor %}
+    <!-- Additional articles can be added here -->
+  </section>
+</body>
+
+{% endblock %}
+
+{% block base_scripts %}
+
+<script>
+  function toggleReadMore() {
+      var dots = document.getElementById("dots");
+      var moreText = document.getElementById("more");
+      var btnText = document.getElementById("readMoreBtn");
+
+      if (dots.style.display === "none") {
+          dots.style.display = "inline";
+          btnText.innerHTML = "Read more";
+          moreText.style.display = "none";
+      } else {
+          dots.style.display = "none";
+          btnText.innerHTML = "Read less";
+          moreText.style.display = "inline";
+      }
+  }
+</script>
+
+{% endblock %}

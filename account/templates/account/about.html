@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% block title %} About Us{% endblock %}
+{% block base_stylesheets %}
+<style>
+    .about-section {
+      padding: 100px 0;
+      text-align: center;
+    }
+    .about-section h2 {
+      font-size: 42px;
+      margin-bottom: 30px;
+    }
+    .team-section {
+      padding: 50px 0;
+      background-color: #ffffff;
+    }
+    .team-member {
+      margin-bottom: 30px;
+      transition: transform 0.3s ease-in-out;
+    }
+    .team-member:hover {
+      transform: translateY(-10px);
+    }
+  </style>
+{% endblock %}
+{% load static %}
+{% block base_content %}
+<section class="about-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2>About Us</h2>
+          <p>Join us in our journey to redefine beauty and inspire a generation to embrace their uniqueness with confidence and pride. Together, let’s go “beyond the filter” and celebrate the beauty of authenticity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="effects">
+    <div class="container text-center">
+      <div class="row pt-4">
+        <div class="col-md-4">
+
+        </div>
+        <img class="container col-md-4 pt-5 px-5 text-center" style="height: 350px; width: 300px;" src="{% static 'img/numl.jpg' %}" alt="{% static 'img/cas2.webp' %}">
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-3">
+
+        </div>
+        <p class="col-md-6 pt-5" style="line-height: 2.5; word-spacing: 0.3em;">
+             A project initiated by a passionate student at the National University of Modern Languages (Islamabad).        </p>
+
+        <p class="container col-md-8 pt-5 px-5" style="line-height: 2.5; word-spacing: 0.3em;">
+            This is an initiative born out of a passion for promoting self-love and body positivity in today’s digital age.
+
+        </p>
+        <p class="container col-md-10 pt-5 px-5" style="line-height: 2.5; word-spacing: 0.3em;">
+            Driven by my own experiences and the realization of the adverse  effects of excessive social media use on mental health, I embarked on a mission to raise awareness about the issue. 
+        </p>
+
+        <p class="container col-md-12 pt-5 px-5" style="line-height: 2.5; word-spacing: 0.3em;">
+            Through “Beyond the Filter,” my  goal is to empower individuals to embrace their true selves, free from the pressures of superficial beauty ideals.
+
+        </p>
+        </div>  
+  </div>
+  <!-- Team Members
+  </section>
+  <section class="team-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="team-member">
+            <img src="https://via.placeholder.com/150" alt="Team Member">
+            <h3>John Doe</h3>
+            <p>Founder & Writer</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="team-member">
+            <img src="https://via.placeholder.com/150" alt="Team Member">
+            <h3>Jane Smith</h3>
+            <p>Editor & Content Manager</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="team-member">
+            <img src="https://via.placeholder.com/150" alt="Team Member">
+            <h3>Emily Johnson</h3>
+            <p>Graphic Designer & Illustrator</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Section -->
+  <footer class="text-light text-center py-3" style="background-color: #F88379;">
+    <p>&copy; 2024 Beyond The Filter</p>
+  </footer>
+{% endblock %}
+
+{% block base_scripts %}
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+{% endblock %}
